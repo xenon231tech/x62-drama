@@ -1,1 +1,1375 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X62 Drama | Drama Pendek Terbaik</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        :root {
+            --primary: #6366F1;
+            --primary-soft: #818CF8;
+            --accent: #EC4899;
+            --accent-soft: #F472B6;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --error: #EF4444;
+            
+            --bg: #09090B;
+            --bg-elevated: #18181B;
+            --bg-card: #27272A;
+            --border: #3F3F46;
+            --border-soft: #27272A;
+            
+            --text: #FAFAFA;
+            --text-soft: #D4D4D8;
+            --text-muted: #71717A;
+            
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+            --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+            
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            
+            --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            font-family: inherit;
+            border: none;
+            cursor: pointer;
+        }
+
+        input, select, textarea {
+            font-family: inherit;
+            border: none;
+            outline: none;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.25rem;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1rem 0;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            background: rgba(9, 9, 11, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-soft);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.35rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-main {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0.25rem;
+        }
+
+        .nav-link {
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-soft);
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--text);
+            background: rgba(99, 102, 241, 0.1);
+        }
+
+        .nav-link.active {
+            color: var(--primary-soft);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            width: 200px;
+            padding: 0.55rem 1rem 0.55rem 2.5rem;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-soft);
+            border-radius: var(--radius-md);
+            color: var(--text);
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary);
+            width: 260px;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 0.85rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.55rem 1.1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-radius: var(--radius-md);
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), #4F46E5);
+            color: white;
+            box-shadow: 0 1px 3px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary-soft);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--text-soft);
+        }
+
+        .btn-ghost:hover {
+            background: var(--bg-elevated);
+            color: var(--text);
+        }
+
+        .btn-icon {
+            width: 38px;
+            height: 38px;
+            padding: 0;
+            border-radius: 50%;
+            font-size: 1rem;
+        }
+
+        .btn-lg {
+            padding: 0.85rem 2rem;
+            font-size: 1rem;
+            border-radius: var(--radius-md);
+        }
+
+        .btn-block {
+            width: 100%;
+        }
+
+        .user-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.35rem 0.5rem 0.35rem 0.35rem;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-soft);
+            border-radius: 999px;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .user-btn:hover {
+            border-color: var(--border);
+            background: var(--bg-card);
+        }
+
+        .user-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .user-name {
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding-right: 0.5rem;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 0.5rem);
+            right: 0;
+            min-width: 220px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 0.5rem;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: var(--transition);
+            box-shadow: var(--shadow-xl);
+            z-index: 100;
+        }
+
+        .dropdown-menu.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.7rem 0.9rem;
+            font-size: 0.9rem;
+            color: var(--text-soft);
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+        }
+
+        .dropdown-item:hover {
+            background: var(--bg-elevated);
+            color: var(--text);
+        }
+
+        .dropdown-divider {
+            height: 1px;
+            background: var(--border-soft);
+            margin: 0.4rem 0;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.35rem;
+            padding: 0.4rem;
+            color: var(--text);
+        }
+
+        /* Mobile Nav Overlay */
+        .mobile-nav-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 150;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .mobile-nav-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Mobile Nav */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 280px;
+            background: var(--bg-card);
+            border-left: 1px solid var(--border);
+            z-index: 200;
+            padding: 1.25rem;
+            transform: translateX(100%);
+            transition: var(--transition);
+            overflow-y: auto;
+        }
+
+        .mobile-nav.show {
+            transform: translateX(0);
+        }
+
+        .mobile-nav-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .mobile-nav-close {
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            padding: 0.3rem;
+            background: none;
+        }
+
+        .mobile-nav-links a,
+        .mobile-nav-links button {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 0.85rem 0;
+            font-size: 1rem;
+            color: var(--text-soft);
+            border-bottom: 1px solid var(--border-soft);
+            background: none;
+        }
+
+        .mobile-nav-links a:hover,
+        .mobile-nav-links button:hover {
+            color: var(--text);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(ellipse at top right, rgba(99, 102, 241, 0.15), transparent 55%),
+                radial-gradient(ellipse at bottom left, rgba(236, 72, 153, 0.1), transparent 55%);
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 640px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 0.85rem;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary-soft);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.8rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            max-width: 540px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+
+        .section-link {
+            font-size: 0.9rem;
+            color: var(--primary-soft);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .section-link:hover {
+            color: var(--accent-soft);
+        }
+
+        /* Grid & Cards */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .drama-card {
+            position: relative;
+            background: var(--bg-elevated);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border-soft);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .drama-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-poster {
+            aspect-ratio: 2/3;
+            background: linear-gradient(135deg, #1E1B4B, #312E81, #44409C);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-poster::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.7));
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .drama-card:hover .card-poster::after {
+            opacity: 1;
+        }
+
+        .card-play {
+            position: absolute;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: var(--primary);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -40%);
+            opacity: 0;
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
+            z-index: 2;
+        }
+
+        .drama-card:hover .card-play {
+            opacity: 1;
+            transform: translate(-50%, -50%);
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 0.75rem;
+            left: 0.75rem;
+            padding: 0.25rem 0.5rem;
+            background: var(--accent);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 600;
+            border-radius: var(--radius-sm);
+            z-index: 2;
+        }
+
+        .card-fav {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: white;
+            z-index: 2;
+            transition: var(--transition);
+        }
+
+        .card-fav:hover,
+        .card-fav.active {
+            background: rgba(239, 68, 68, 0.9);
+        }
+
+        .card-body {
+            padding: 1rem;
+        }
+
+        .card-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            line-height: 1.4;
+        }
+
+        .card-meta {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .card-rating {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            color: var(--warning);
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .card-genres {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+        }
+
+        .genre-pill {
+            font-size: 0.7rem;
+            padding: 0.2rem 0.5rem;
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary-soft);
+            border-radius: 999px;
+        }
+
+        /* Filters */
+        .filters-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding: 1.25rem;
+            background: var(--bg-elevated);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-soft);
+        }
+
+        .filters-wrap select,
+        .filters-wrap input {
+            padding: 0.55rem 0.85rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text);
+            font-size: 0.85rem;
+        }
+
+        .filters-wrap select:focus,
+        .filters-wrap input:focus {
+            border-color: var(--primary);
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-muted);
+        }
+
+        .empty-state h3 {
+            color: var(--text-soft);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Modal */
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(6px);
+            z-index: 300;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .modal-backdrop.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal {
+            background: var(--bg-card);
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--border);
+            width: 100%;
+            max-width: 420px;
+            max-height: 90vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .modal-backdrop.show .modal {
+            transform: translateY(0);
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border-soft);
+        }
+
+        .modal-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .modal-close {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--bg-elevated);
+            font-size: 1rem;
+            color: var(--text-muted);
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            background: var(--error);
+            color: white;
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+            overflow-y: auto;
+        }
+
+        /* Form */
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-soft);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: var(--text);
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .form-input:focus {
+            border-color: var(--primary);
+        }
+
+        .form-error {
+            margin-top: 0.4rem;
+            font-size: 0.8rem;
+            color: var(--error);
+            display: none;
+        }
+
+        .form-group.error .form-input {
+            border-color: var(--error);
+        }
+
+        .form-group.error .form-error {
+            display: block;
+        }
+
+        .auth-tabs {
+            display: flex;
+            border-bottom: 1px solid var(--border-soft);
+            margin-bottom: 1.5rem;
+        }
+
+        .auth-tab {
+            padding: 0.75rem 1rem;
+            background: none;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-bottom: 2px solid transparent;
+            margin-bottom: -1px;
+        }
+
+        .auth-tab.active {
+            color: var(--primary-soft);
+            border-bottom-color: var(--primary);
+        }
+
+        .auth-switch {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .auth-switch button {
+            background: none;
+            color: var(--primary-soft);
+            font-weight: 500;
+            text-decoration: underline;
+        }
+
+        /* Toast */
+        .toast-container {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            z-index: 500;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .toast {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 1rem 1.25rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            min-width: 300px;
+            font-size: 0.9rem;
+            animation: toastIn 0.3s ease;
+        }
+
+        @keyframes toastIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .toast-success {
+            border-left: 3px solid var(--success);
+        }
+
+        .toast-error {
+            border-left: 3px solid var(--error);
+        }
+
+        .toast-close {
+            margin-left: auto;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* Pages */
+        .page {
+            display: none;
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-elevated);
+            border-top: 1px solid var(--border-soft);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr repeat(3, 1fr);
+            gap: 3rem;
+        }
+
+        .footer-brand .logo {
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .footer-brand p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            max-width: 300px;
+            line-height: 1.7;
+        }
+
+        .footer-col h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-soft);
+        }
+
+        .footer-col a {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0.7rem;
+            transition: var(--transition);
+        }
+
+        .footer-col a:hover {
+            color: var(--primary-soft);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 3rem;
+            border-top: 1px solid var(--border-soft);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .nav-main,
+            .search-box {
+                display: none;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Toast Container -->
+<div class="toast-container" id="toastContainer"></div>
+
+<!-- Header -->
+<header id="header">
+    <div class="container header-inner">
+        <a href="#" class="logo" onclick="navigateTo('home')">X62 Drama</a>
+        
+        <div class="nav-main">
+            <nav class="nav-links">
+                <a href="#" class="nav-link active" data-page="home">Beranda</a>
+                <a href="#" class="nav-link" data-page="browse">Telusuri</a>
+                <a href="#" class="nav-link" data-page="favorites">Favorit</a>
+                <a href="#" class="nav-link" data-page="history">Riwayat</a>
+            </nav>
+        </div>
+
+        <div class="nav-actions">
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" placeholder="Cari drama...">
+            </div>
+            
+            <div id="authArea">
+                <button class="btn btn-secondary" onclick="openAuthModal('login')">Masuk</button>
+                <button class="btn btn-primary" onclick="openAuthModal('register')">Daftar</button>
+            </div>
+
+            <div class="dropdown" id="userArea" style="display:none;">
+                <div class="user-btn" onclick="toggleDropdown()">
+                    <div class="user-avatar" id="userAvt"></div>
+                    <span class="user-name" id="userNameNav"></span>
+                </div>
+                <div class="dropdown-menu" id="userDropdownMenu">
+                    <a href="#" class="dropdown-item" onclick="navigateTo('profile'); closeDropdown();">Profil</a>
+                    <a href="#" class="dropdown-item" onclick="navigateTo('favorites'); closeDropdown();">Drama Favorit</a>
+                    <a href="#" class="dropdown-item" onclick="navigateTo('history'); closeDropdown();">Riwayat Tontonan</a>
+                    <div class="dropdown-divider"></div>
+                    <button class="dropdown-item" onclick="logout()">Keluar</button>
+                </div>
+            </div>
+
+            <button class="btn btn-icon btn-ghost menu-toggle" onclick="openMobileNav()">☰</button>
+        </div>
+    </div>
+</header>
+
+<!-- Mobile Nav Overlay -->
+<div class="mobile-nav-overlay" id="mobileOverlay" onclick="closeMobileNav()"></div>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileMenu">
+    <div class="mobile-nav-header">
+        <span class="logo">X62 Drama</span>
+        <button class="mobile-nav-close" onclick="closeMobileNav()">×</button>
+    </div>
+    <nav class="mobile-nav-links">
+        <a href="#" data-page="home" onclick="navigateTo('home'); closeMobileNav();">Beranda</a>
+        <a href="#" data-page="browse" onclick="navigateTo('browse'); closeMobileNav();">Telusuri</a>
+        <a href="#" data-page="favorites" onclick="navigateTo('favorites'); closeMobileNav();">Favorit</a>
+        <a href="#" data-page="history" onclick="navigateTo('history'); closeMobileNav();">Riwayat</a>
+        <div id="mobileAuthLinks">
+            <a href="#" onclick="openAuthModal('login'); closeMobileNav();">Masuk</a>
+            <a href="#" onclick="openAuthModal('register'); closeMobileNav();">Daftar</a>
+        </div>
+        <div id="mobileUserLinks" style="display:none;">
+            <a href="#" onclick="navigateTo('profile'); closeMobileNav();">Profil</a>
+            <a href="#" onclick="logout(); closeMobileNav();">Keluar</a>
+        </div>
+    </nav>
+</div>
+
+<!-- AUTH MODAL -->
+<div class="modal-backdrop" id="authModal">
+    <div class="modal">
+        <div class="modal-header">
+            <h3 class="modal-title" id="authModalTitle">Daftar Akun</h3>
+            <button class="modal-close" onclick="closeAuthModal()">×</button>
+        </div>
+        <div class="modal-body">
+            <div class="auth-tabs">
+                <button class="auth-tab active" id="tabRegister" onclick="switchAuthTab('register')">Daftar</button>
+                <button class="auth-tab" id="tabLogin" onclick="switchAuthTab('login')">Masuk</button>
+            </div>
+
+            <!-- REGISTER FORM -->
+            <form id="registerForm" onsubmit="handleRegister(event)">
+                <div class="form-group">
+                    <label class="form-label">Nama Lengkap</label>
+                    <input type="text" class="form-input" id="regName" placeholder="Masukkan nama lengkap">
+                    <div class="form-error">Nama harus diisi</div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-input" id="regEmail" placeholder="contoh@email.com">
+                    <div class="form-error">Masukkan email yang valid</div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Kata Sandi</label>
+                    <input type="password" class="form-input" id="regPassword" placeholder="Minimal 6 karakter">
+                    <div class="form-error">Kata sandi minimal 6 karakter</div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Konfirmasi Kata Sandi</label>
+                    <input type="password" class="form-input" id="regPasswordConfirm" placeholder="Ulangi kata sandi">
+                    <div class="form-error">Kata sandi tidak cocok</div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Buat Akun</button>
+            </form>
+
+            <!-- LOGIN FORM -->
+            <form id="loginForm" style="display:none;" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-input" id="loginEmail" placeholder="contoh@email.com">
+                    <div class="form-error">Email tidak ditemukan</div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Kata Sandi</label>
+                    <input type="password" class="form-input" id="loginPassword" placeholder="Masukkan kata sandi">
+                    <div class="form-error">Kata sandi salah</div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Masuk ke Akun</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- HOME PAGE -->
+<div class="page active" id="page-home">
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-inner">
+                <span class="hero-badge">Pilihan Editor</span>
+                <h1>Cerita Pendek,<br>Kenangan Panjang</h1>
+                <p>Temukan koleksi drama pendek terbaik dari berbagai genre. Tonton kapan saja, di mana saja — cerita bermakna hanya dalam beberapa menit.</p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary btn-lg" onclick="navigateTo('browse')">Telusuri Drama</button>
+                    <button class="btn btn-secondary btn-lg" onclick="document.getElementById('section-new').scrollIntoView({behavior:'smooth'})">Lihat Terbaru</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="section-new">
+        <div class="container">
+            <div class="section-head">
+                <h2 class="section-title">Drama Terbaru</h2>
+                <a href="#" class="section-link" onclick="navigateTo('browse'); return false;">Lihat Semua →</a>
+            </div>
+            <div class="grid" id="newGrid"></div>
+        </div>
+    </section>
+
+    <section style="padding-top: 0;">
+        <div class="container">
+            <div class="section-head">
+                <h2 class="section-title">Sedang Populer</h2>
+                <a href="#" class="section-link" onclick="navigateTo('browse'); return false;">Lihat Semua →</a>
+            </div>
+            <div class="grid" id="popularGrid"></div>
+        </div>
+    </section>
+</div>
+
+<!-- BROWSE PAGE -->
+<div class="page" id="page-browse">
+    <section>
+        <div class="container">
+            <h2 class="section-title" style="margin-bottom: 1.5rem;">Telusuri Semua Drama</h2>
+            
+            <div class="filters-wrap">
+                <select id="fGenre">
+                    <option value="">Semua Genre</option>
+                    <option value="Romansa">Romansa</option>
+                    <option value="Misteri">Misteri</option>
+                    <option value="Kehidupan">Kehidupan</option>
+                    <option value="Fantasi">Fantasi</option>
+                </select>
+                <select id="fSort">
+                    <option value="newest">Terbaru</option>
+                    <option value="popular">Terpopuler</option>
+                    <option value="name">Nama A-Z</option>
+                </select>
+                <input type="text" id="fSearch" placeholder="Cari drama...">
+                <button class="btn btn-secondary" onclick="renderBrowse()">Cari</button>
+            </div>
+
+            <div class="grid" id="browseGrid"></div>
+        </div>
+    </section>
+</div>
+
+<!-- FAVORITES PAGE -->
+<div class="page" id="page-favorites">
+    <section>
+        <div class="container">
+            <h2 class="section-title" style="margin-bottom: 2rem;">Drama Favorit</h2>
+            <div class="grid" id="favGrid"></div>
+        </div>
+    </section>
+</div>
+
+<!-- HISTORY PAGE -->
+<div class="page" id="page-history">
+    <section>
+        <div class="container">
+            <div class="section-head">
+                <h2 class="section-title">Riwayat Tontonan</h2>
+                <button class="btn btn-secondary btn-sm" onclick="clearHistory()">Hapus Riwayat</button>
+            </div>
+            <div class="grid" id="historyGrid"></div>
+        </div>
+    </section>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="logo">X62 Drama</a>
+                <p>Platform drama pendek terbaik untuk menemani waktu luang Anda dengan cerita-cerita bermakna dan inspiratif.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Tautan</h4>
+                <a href="#" onclick="navigateTo('home')">Beranda</a>
+                <a href="#" onclick="navigateTo('browse')">Telusuri</a>
+                <a href="#" onclick="navigateTo('favorites')">Favorit</a>
+            </div>
+            <div class="footer-col">
+                <h4>Bantuan</h4>
+                <a href="#">Tentang Kami</a>
+                <a href="#">Kebijakan Privasi</a>
+                <a href="#">Hubungi Kami</a>
+            </div>
+            <div class="footer-col">
+                <h4>Sosial</h4>
+                <a href="#">Instagram</a>
+                <a href="#">YouTube</a>
+                <a href="#">TikTok</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 X62 Drama. Semua hak dilindungi.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+// ================= DATA & STATE =================
+const dramas = [
+    { id: 1, title: 'Senja di Ujung Jalan', genre: 'Romansa', year: 2026, rating: 4.8, views: 1250, isNew: true, description: 'Kisah dua orang yang tak sengaja bertemu di perjalanan pulang dan menyadari bahwa mereka memiliki lebih banyak kesamaan daripada yang dibayangkan.' },
+    { id: 2, title: 'Rahasia Hati', genre: 'Misteri', year: 2026, rating: 4.6, views: 980, isNew: true, description: 'Sebuah surat lama mengungkap kisah yang tersembunyi selama puluhan tahun di sebuah desa kecil.' },
+    { id: 3, title: 'Langit Tak Selalu Biru', genre: 'Kehidupan', year: 2025, rating: 4.9, views: 2100, isNew: false, description: 'Perjalanan seorang pemuda menemukan makna kehidupan setelah kehilangan orang yang dicintainya.' },
+    { id: 4, title: 'Mimpi yang Sama', genre: 'Fantasi', year: 2025, rating: 4.5, views: 1560, isNew: false, description: 'Di dunia di mana mimpi bisa terhubung, dua orang berjuang mewujudkan impian mereka yang mustahil.' },
+    { id: 5, title: 'Hari yang Berulang', genre: 'Misteri', year: 2026, rating: 4.7, views: 890, isNew: true, description: 'Bagaimana jika kamu terjebak di hari yang sama berulang-ulang? Dan hanya kamu yang menyadarinya.' },
+    { id: 6, title: 'Satu Detik', genre: 'Romansa', year: 2025, rating: 4.4, views: 1340, isNew: false, description: 'Semua bisa berubah dalam satu detik. Kisah tentang keberanian mengungkapkan perasaan sebelum terlambat.' },
+];
+
+let currentUser = null;
+let users = JSON.parse(localStorage.getItem('x62_users') || '[]');
+let favorites = JSON.parse(localStorage.getItem('x62_favorites') || '[]');
+let history = JSON.parse(localStorage.getItem('x62_history') || '[]');
+
+// ================= INIT =================
+document.addEventListener('DOMContentLoaded', () => {
+    checkSession();
+    renderHome();
+    
+    window.addEventListener('scroll', () => {
+        const header = document.getElementById('header');
+        if (window.scrollY > 20) header.classList.add('scrolled');
+        else header.classList.remove('scrolled');
+    });
+});
+
+// ================= NAVIGATION =================
+function navigateTo(page) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById(`page-${page}`).classList.add('active');
+    
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.toggle('active', link.dataset.page === page);
+    });
+    
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    if (page === 'browse') renderBrowse();
+    if (page === 'favorites') renderFavorites();
+    if (page === 'history') renderHistory();
+}
+
+// ================= MODAL =================
+function openAuthModal(type) {
+    document.getElementById('authModal').classList.add('show');
+    switchAuthTab(type);
+}
+
+function closeAuthModal() {
+    document.getElementById('authModal').classList.remove('show');
+    clearFormErrors();
+}
+
+function switchAuthTab(tab) {
+    if (tab === 'register') {
+        document.getElementById('tabRegister').classList.add('active');
+        document.getElementById('tabLogin').classList.remove('active');
+        document.getElementById('registerForm').style.display = 'block';
+        document.getElementById('loginForm').style.display = 'none';
+        document.getElementById('authModalTitle').textContent = 'Daftar Akun';
+    } else {
+        document.getElementById('tabRegister').classList.remove('active');
+        document.getElementById('tabLogin').classList.add('active');
+        document.getElementById('registerForm').style.display = 'none';
+        document.getElementById('loginForm').style.display = 'block';
+        document.getElementById('authModalTitle').textContent = 'Masuk ke Akun';
+    }
+    clearFormErrors();
+}
+
+function clearFormErrors() {
+    document.querySelectorAll('.form-group').forEach(g => g.classList.remove('error'));
+}
+
+// ================= AUTH HANDLERS =================
+function handleRegister(e) {
+    e.preventDefault();
+    clearFormErrors();
+    
+    const name = document.getElementById('regName').value.trim();
+    const email = document.getElementById('regEmail').value.trim();
+    const password = document.getElementById('regPassword').value;
+    const passwordConfirm = document.getElementById('regPasswordConfirm').value;
+    
+    let valid = true;
+    
+    if (!name) {
+        document.getElementById('regName').parentElement.classList.add('error');
+        valid = false;
+    }
+    if (!email || !email.includes('@')) {
+        document.getElementById('regEmail').parentElement.classList.add('error');
+        valid = false;
+    }
+    if (!password || password.length < 6) {
+        document.getElementById('regPassword').parentElement.classList.add('error');
+        valid = false;
+    }
+    if (password !== passwordConfirm) {
+        document.getElementById('regPasswordConfirm').parentElement.classList.add('error');
+        valid = false;
+    }
+    
+    if (!valid) return;
+    
+    const existingUser = users.find(u => u.email === email);
+    if (existingUser) {
+        showToast('Email sudah terdaftar! Silakan masuk.', 'error');
+        switchAuthTab('login');
+        return;
+    }
+    
+    const newUser = { id: Date.now(), name, email, password };
+    users.push(newUser);
+    localStorage.setItem('x62_users', JSON.stringify(users));
+    
+    localStorage.setItem('x62_session', JSON.stringify({ id: newUser.id, name: newUser.name, email: newUser.email }));
+    currentUser = newUser;
+    
+    updateUserUI();
+    closeAuthModal();
+    showToast('Pendaftaran berhasil! Selamat datang, ' + name, 'success');
+}
+
+function handleLogin(e) {
+    e.preventDefault();
+    clearFormErrors();
+    
+    const email = document.getElementById('loginEmail').value.trim();
+    const password = document.getElementById('loginPassword').value;
+    
+    const user = users.find(u => u.email === email && u.password === password);
+    
+    if (!email || !email.includes('@')) {
+        document.getElementById('loginEmail').parentElement.classList.add('error');
+        return;
+    }
+    
+    if (user) {
+        localStorage.setItem('x62_session', JSON.stringify({ id: user.id, name: user.name
